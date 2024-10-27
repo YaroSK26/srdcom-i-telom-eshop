@@ -1,7 +1,7 @@
 "use client";
 
-import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function Home() {
   };
 
   const controlNavbar = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
         // Scroll down
         setIsVisible(false);
@@ -26,37 +26,61 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
 
       return () => {
-        window.removeEventListener('scroll', controlNavbar);
+        window.removeEventListener("scroll", controlNavbar);
       };
     }
   }, [lastScrollY]);
 
   return (
     <div>
-      <div className={`fixed top-0 left-0 right-0 flex justify-between items-center p-6 sm:px-12 px-6 bg-background transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div
+        className={`fixed top-0 left-0 right-0 flex justify-between bg-black z-50 items-center p-6 sm:px-12 px-6 bg-background transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="flex items-center">
-          <div className="text-2xl font-bold text-primary mx-auto lg:absolute lg:top-[29px] lg:left-[43.5%]">
+          <div className="text-2xl font-bold mx-auto lg:absolute lg:top-[30px] lg:left-[43.5%] d">
             SRDCOM I TELOM
           </div>
           <div className="hidden lg:flex space-x-8">
-            <a href="#" className="text-muted hover:text-muted-foreground">
-              OUR STORY
-            </a>
-            <a href="#" className="text-muted hover:text-muted-foreground">
-              COLLECTION
-            </a>
-            <a href="#" className="text-muted hover:text-muted-foreground">
-              BUSINESS
-            </a>
+            <nav>
+              <ul className="flex space-x-8">
+                <li className="relative">
+                  <a
+                    href="/"
+                    className="text-muted hover:text-muted-foreground"
+                  >
+                    DOMOV
+                  </a>
+                </li>
+                <li className="relative">
+                  <a
+                    href="/galeria"
+                    className="text-muted hover:text-muted-foreground"
+                  >
+                    GALÉRIA
+                  </a>
+                </li>
+
+                <li className="relative">
+                  <a
+                    href="#"
+                    className="text-muted hover:text-muted-foreground"
+                  >
+                    BUSINESS
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
         <a
           href="#"
-          className="hidden lg:block border border-muted rounded-full px-4 py-2 text-muted hover:bg-muted hover:text-muted-foreground"
+          className="hidden lg:block transition-colors border border-muted rounded-full px-4 py-2 text-muted hover:bg-muted hover:text-muted-foreground"
         >
           CONTACT US
         </a>
@@ -68,7 +92,9 @@ export default function Home() {
         </button>
       </div>
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-8 z-40">
+        <div
+          className={`fixed inset-0  bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-8 z-40 transition-top duration-300`}
+        >
           <a href="#" className="text-white text-2xl" onClick={toggleMenu}>
             OUR STORY
           </a>
