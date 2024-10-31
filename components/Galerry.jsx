@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Banner from "./Banner";
 
 const Gallery = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -64,7 +65,7 @@ const Gallery = () => {
   return (
     <div className="mt-28">
       <div className="relative min-h-[200vh]">
-        <div className="sticky top-0 h-screen flex justify-center items-center overflow-hidden">
+        <div className="sticky rounded top-0 h-screen flex justify-center items-center overflow-hidden">
           <div className="relative flex gap-8">
             {/* Left column */}
             <div
@@ -147,18 +148,7 @@ const Gallery = () => {
           </div>
         </div>
       </div>
-      <div className="pl-20 flex flex-col justify-center items-start w-full h-screen rounded-b-[80px] bg-red-500">
-        <h2 className="sm:text-6xl text-3xl lg:w-[800px] md:w-[600px] sm:w-[500px] w-[300px] pb-5">
-          Tam kde sa srdce a telo sa spájaju do jedného.
-        </h2>
-        <br />
-        <a
-          href="#"
-          className="border border-muted rounded-full px-8 py-4 transition-colors text-muted hover:bg-muted hover:text-muted-foreground"
-        >
-          KÚPIŤ TERAZ
-        </a>
-      </div>
+      <Banner></Banner>
     </div>
   );
 };

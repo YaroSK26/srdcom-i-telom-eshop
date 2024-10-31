@@ -3,6 +3,8 @@
 import useLenis from "@/components/lenis";
 import { useEffect } from "react";
 import { TextRevealDemo } from "@/components/TextReveal";
+import Product from "@/components/Product";
+import Banner from "@/components/Banner";
 
 export default function Home() {
 
@@ -28,8 +30,8 @@ export default function Home() {
     <div className="mt-24 relative">
     
       <TextRevealDemo></TextRevealDemo>
-      Produkts
-     
+      <Product></Product>
+      <Banner></Banner>
      
     </div>
   );

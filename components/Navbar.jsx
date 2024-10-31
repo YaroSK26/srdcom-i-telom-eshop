@@ -68,10 +68,10 @@ export default function Home() {
 
                 <li className="relative">
                   <a
-                    href="#"
+                    href="/kontakt"
                     className="text-muted hover:text-muted-foreground"
                   >
-                    BUSINESS
+                    KONTAKT
                   </a>
                 </li>
               </ul>
@@ -80,9 +80,9 @@ export default function Home() {
         </div>
         <a
           href="#"
-          className="hidden lg:block transition-colors border border-muted rounded-full px-4 py-2 text-muted hover:bg-muted hover:text-muted-foreground"
+          className="hidden lg:block transition-all border border-muted rounded-full px-4 py-2 text-muted hover:bg-muted hover:text-black"
         >
-          CONTACT US
+          KUPIŤ TERAZ
         </a>
         <button
           className="lg:hidden text-muted hover:text-muted-foreground z-50 fixed sm:right-12 right-5 top-[21.5px]"
@@ -95,21 +95,18 @@ export default function Home() {
         <div
           className={`fixed inset-0  bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-8 z-40 transition-top duration-300`}
         >
-          <a href="#" className="text-white text-2xl" onClick={toggleMenu}>
-            OUR STORY
-          </a>
-          <a href="#" className="text-white text-2xl" onClick={toggleMenu}>
-            COLLECTION
-          </a>
-          <a href="#" className="text-white text-2xl" onClick={toggleMenu}>
-            BUSINESS
+          <a href="/" className="text-white text-2xl" onClick={toggleMenu}>
+            DOMOV
           </a>
           <a
-            href="#"
-            className="text-white text-2xl border border-white rounded-full px-4 py-2"
+            href="/galeria"
+            className="text-white text-2xl"
             onClick={toggleMenu}
           >
-            CONTACT US
+            GALÉRIA
+          </a>
+          <a href="/kontakt" className="text-white text-2xl" onClick={toggleMenu}>
+            KONTAKT
           </a>
         </div>
       )}

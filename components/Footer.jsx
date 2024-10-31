@@ -2,36 +2,32 @@ import { Instagram, Mail } from 'lucide-react';
 import React from 'react';
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-background text-muted-foreground py-6">
       <div className="container mx-auto flex flex-col items-center">
         <nav className="flex space-x-4 mb-5">
           <a
-            href="/our-story"
+            href="/"
             className="footer-link text-muted hover:text-muted-foreground"
           >
-            OUR STORY
+            DOMOV
           </a>
           <span>|</span>
           <a
-            href="/collection"
+            href="/galeria"
             className="footer-link text-muted hover:text-muted-foreground"
           >
-            COLLECTION
+            GALÉRIA
           </a>
           <span>|</span>
+
           <a
-            href="/business"
+            href="/kontakt"
             className="footer-link text-muted hover:text-muted-foreground"
           >
-            BUSINESS
-          </a>
-          <span>|</span>
-          <a
-            href="/contact"
-            className="footer-link text-muted hover:text-muted-foreground"
-          >
-            CONTACT US
+            KONTAKT
           </a>
         </nav>
         <div className="flex space-x-4 gap-2 mt-4">
@@ -43,34 +39,28 @@ const Footer = () => {
             <Instagram />
           </a>
           <a
-            href="#"
+            href="/kontakt"
             aria-label="Blog"
             className="hover:text-white transition-colors duration-300"
           >
             <Mail />
           </a>
         </div>
-        <div className="my-8 text-xs flex gap-2">
-          <a
-            href="/privacy-policy"
-            className="footer-link text-muted hover:text-muted-foreground"
-          >
-            PRIVACY POLICY
-          </a>
-          <span>|</span>
-          <a
-            href="/terms"
-            className="footer-link text-muted hover:text-muted-foreground"
-          >
-            TERMS & CONDITIONS
-          </a>
-          <span>|</span>
-          <a
-            href="/refund-policy"
-            className="footer-link text-muted hover:text-muted-foreground"
-          >
-            RETURN & REFUND POLICY
-          </a>
+        <div className="mt-5 text-lg flex flex-col gap-2">
+          <div className="flex gap-2 justify-center">
+            <p href="/privacy-policy" className=" text-muted">
+              Stránku vytvoril
+            </p>
+            <span>|</span>
+            <a
+              href="https://jaroslav.website"
+              target="_blank"
+              className="footer-link text-muted hover:text-muted-foreground"
+            >
+              Jaroslav
+            </a>
+          </div>
+          <p> &copy; {currentYear} Všetky práva vyhradené </p>
         </div>
       </div>
     </footer>
